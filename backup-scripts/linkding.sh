@@ -14,7 +14,6 @@ docker exec -it $CONTAINER python manage.py full_backup /etc/linkding/data/$BACK
 # copy the backup file to the backup directory
 docker cp $CONTAINER:/etc/linkding/data/$BACKUP_FILE $BACKUP_DIR/$BACKUP_FILE
 
-
 # Delete files that are older than 30 days from backup folder
 find $BACKUP_DIR/* -mtime +30 -exec rm {} \;
 
