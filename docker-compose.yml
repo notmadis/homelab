@@ -1,0 +1,52 @@
+services:
+  glance:
+    container_name: glance
+    image: glanceapp/glance
+    restart: unless-stopped
+    volumes:
+      - ./glance/config:/app/config
+    ports:
+      - 8080:8080
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.2
+
+  linkding:
+    container_name: "${LD_CONTAINER_NAME:-linkding}"
+    image: sissbruecker/linkding:latest
+    ports:
+      - "${LD_HOST_PORT:-9090}:9090"
+    volumes:
+      - "${LD_HOST_DATA_DIR:-./linkding/data}:/etc/linkding/data"
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.3
+
+
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:latest
+    container_name: homebox
+    restart: always
+    environment:
+    - HBOX_LOG_LEVEL=info
+    - HBOX_LOG_FORMAT=text
+    - HBOX_WEB_MAX_FILE_UPLOAD=10
+    - HBOX_DATABASE_DRIVER=sqlite3
+    volumes:
+      - ./homebox/data:/data/
+    ports:
+      - 3100:7745
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.4
+
+networks:
+  homelab-network:
+    name: homelab-network 
+    ipam:
+      config:
+        - subnet: 172.50.0.0/24
+
