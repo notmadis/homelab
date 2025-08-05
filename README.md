@@ -19,6 +19,8 @@ This script will:
 - Set up backup directories
 - Install necessary programs for homelab
 
+Edit the `.env.example` file and change the filename to `.env`
+
 ## Running with docker
 ```shell
 docker compose up -d
