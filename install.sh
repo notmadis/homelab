@@ -30,4 +30,4 @@ chmod +x ~/homelab/backup-scripts/linkding.sh
 CRON_JOB="0 0 * * 1 ~/homelab/backup-scripts/linkding.sh"
 
 # Add the cron job to the crontab
-# ( crontab -l; echo "$CRON_JOB" ) | crontab -
+( crontab -l; echo "$CRON_JOB" ) | crontab -
