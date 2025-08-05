@@ -18,6 +18,8 @@ mkdir ~/backups/linkding
 
 sudo apt update -y
 
+sudo apt install -y cron
+
 # Create backup cronjob
 echo "Creating a cronjob"
 # Specify the shell to use
