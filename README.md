@@ -58,6 +58,7 @@ Network is defined in a single docker compose file.
 ## TODO
 
 - [x] Find more than 30 days old backups from linking docker container and remove them as well in the backup script
+- [ ] Add installation script
 - [ ] Add cronjob feature in the install script
 - [ ] Nginx and DNS setup
 ## More apps
