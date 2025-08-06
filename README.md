@@ -47,8 +47,7 @@ Linkding is a bookmark management service. The data is stored in an sqlite3 data
 
 #### Backup
 
-To be implemented:
-Plan is a cron job that will run the command to pack everything in a `.zip` file. Then the file will be uploaded to a backup location. The document detailing this can be found [here](https://github.com/sissbruecker/linkding/blob/5330252db9f452e77282ef2f9cc9585e9bf7ae04/docs/src/content/docs/backups.md#L4)
+Cron job will be installed with `install.sh`. The backup script will pack everything in a zip file and the file will be copied to backup directory `~/backups/linkding`. The document detailing this can be found [here](https://github.com/sissbruecker/linkding/blob/5330252db9f452e77282ef2f9cc9585e9bf7ae04/docs/src/content/docs/backups.md#L4)
 
 ## Network
 
@@ -58,17 +57,17 @@ Network is defined in a single docker compose file.
 ## TODO
 
 - [x] Find more than 30 days old backups from linking docker container and remove them as well in the backup script
-- [ ] Add installation script
-- [ ] Add cronjob feature in the install script
+- [x] Add installation script
+- [x] Add cronjob feature in the install script
+- [ ] Add homebox backup feature
 - [ ] Nginx and DNS setup
+
 ## More apps
 
 - **mealie** - manage recipies
 - **jellyfin** - media server
 - **Bar assistant**
-
 - [Archivebox](https://github.com/ArchiveBox/ArchiveBox/) - Archive webpages
 - [Wallabag](https://github.com/wallabag/wallabag) - Webpage manager
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - [Tube Archivist](https://github.com/tubearchivist/tubearchivist) - Download and host youtube videos
 
