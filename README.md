@@ -34,7 +34,6 @@ There are several self-hosted applications in this homelab.
 
 - [Linkding](https://github.com/sissbruecker/linkding)
 - [homebox](https://github.com/sysadminsmedia/homebox)
-- [glance]()
 
 ### homebox
 
