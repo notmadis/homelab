@@ -1,16 +1,4 @@
 services:
-  glance:
-    container_name: glance
-    image: glanceapp/glance
-    restart: unless-stopped
-    volumes:
-      - ./glance/config:/app/config
-    ports:
-      - 8080:8080
-    networks:
-      homelab-network:
-        ipv4_address: 172.50.0.2
-
   linkding:
     container_name: "${LD_CONTAINER_NAME:-linkding}"
     image: sissbruecker/linkding:latest
@@ -42,6 +30,20 @@ services:
     networks:
       homelab-network:
         ipv4_address: 172.50.0.4
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    restart: unless-stopped
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.5
+
+
 
 networks:
   homelab-network:
