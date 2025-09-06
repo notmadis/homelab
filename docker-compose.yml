@@ -13,24 +13,6 @@ services:
       homelab-network:
         ipv4_address: 172.50.0.3
 
-
-  homebox:
-    image: ghcr.io/sysadminsmedia/homebox:latest
-    container_name: homebox
-    restart: always
-    environment:
-    - HBOX_LOG_LEVEL=info
-    - HBOX_LOG_FORMAT=text
-    - HBOX_WEB_MAX_FILE_UPLOAD=10
-    - HBOX_DATABASE_DRIVER=sqlite3
-    volumes:
-      - ./homebox/data:/data/
-    ports:
-      - 3100:7745
-    networks:
-      homelab-network:
-        ipv4_address: 172.50.0.4
-
   ngix-proxy:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
