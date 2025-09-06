@@ -33,12 +33,6 @@ Applications can currently be accessed on server ip.
 There are several self-hosted applications in this homelab.
 
 - [Linkding](https://github.com/sissbruecker/linkding)
-- [homebox](https://github.com/sysadminsmedia/homebox)
-
-### homebox
-
-Inventory management system.
-Data is stored in sqlite3 database.
 
 ### linkding
 
@@ -58,8 +52,7 @@ Network is defined in a single docker compose file.
 
 - [x] Add installation script
 - [x] Add cronjob feature in the install script
-- [ ] Add homebox backup feature
-- [ ] Nginx and DNS setup, include readme for network 
+- [x] Nginx and DNS setup, include readme for network 
 
 ## More apps
 
@@ -68,5 +61,4 @@ Network is defined in a single docker compose file.
 - **Bar assistant**
 - [Archivebox](https://github.com/ArchiveBox/ArchiveBox/) - Archive webpages
 - [Wallabag](https://github.com/wallabag/wallabag) - Webpage manager
-- [Tube Archivist](https://github.com/tubearchivist/tubearchivist) - Download and host youtube videos
 
