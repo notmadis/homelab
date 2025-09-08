@@ -33,6 +33,7 @@ Applications can currently be accessed on server ip.
 There are several self-hosted applications in this homelab.
 
 - [Linkding](https://github.com/sissbruecker/linkding)
+- [Jellyfin](https://github.com/jellyfin/jellyfin)
 
 ### linkding
 
@@ -57,7 +58,6 @@ Network is defined in a single docker compose file.
 ## More apps
 
 - **mealie** - manage recipies
-- **jellyfin** - media server
 - **Bar assistant**
 - [Archivebox](https://github.com/ArchiveBox/ArchiveBox/) - Archive webpages
 - [Wallabag](https://github.com/wallabag/wallabag) - Webpage manager
