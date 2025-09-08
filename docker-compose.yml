@@ -13,6 +13,27 @@ services:
       homelab-network:
         ipv4_address: 172.50.0.3
 
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./jellyfin/config:/config
+      - $HOME/data/movies/:/data/movies
+      - $HOME/data/shows/:/data/shows
+      - $HOME/data/youtube:/data/youtube
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+    devices:
+      - /dev/dri:/dev/dri
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.4
+
   ngix-proxy:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
