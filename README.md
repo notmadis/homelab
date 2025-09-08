@@ -17,6 +17,7 @@ Run the installation script
 
 This script will:
 - Set up backup directories
+- Set up Jellyfin media library directories
 - Install necessary programs for homelab
 
 Edit the `.env.example` file and change the filename to `.env`
@@ -26,7 +27,7 @@ Edit the `.env.example` file and change the filename to `.env`
 docker compose up -d
 ```
 
-Applications can currently be accessed on server ip.
+Applications can currently be accessed on server ip. Nginx proxy manager can be set up as well.
 
 ## Apps
 
