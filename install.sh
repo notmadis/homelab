@@ -11,6 +11,15 @@ cat << 'EOF'
 
 EOF
 
+# Create media folder
+
+mkdir $HOME/data
+mkdir $HOME/data/movies
+mkdir $HOME/data/shows
+mkdir $HOME/data/youtube
+
+
+
 # Create backup folders
 echo "Creating backup folders"
 mkdir ~/backups
