@@ -55,6 +55,7 @@ Network is defined in a single docker compose file.
 - [x] Add installation script
 - [x] Add cronjob feature in the install script
 - [x] Nginx and DNS setup, include readme for network 
+- [ ] Backup script for Jellyfin
 
 ## More apps
 
