@@ -35,6 +35,8 @@ There are several self-hosted applications in this homelab.
 
 - [Linkding](https://github.com/sissbruecker/linkding)
 - [Jellyfin](https://github.com/jellyfin/jellyfin)
+- [Prometheus](https://github.com/prometheus/prometheus)
+- [Grafana](https://github.com/grafana/grafana)
 
 ### linkding
 
@@ -44,6 +46,12 @@ Linkding is a bookmark management service. The data is stored in an sqlite3 data
 
 Cron job will be installed with `install.sh`. The backup script will pack everything in a zip file and the file will be copied to backup directory `~/backups/linkding`. The document detailing this can be found [here](https://github.com/sissbruecker/linkding/blob/5330252db9f452e77282ef2f9cc9585e9bf7ae04/docs/src/content/docs/backups.md#L4) The script will also find more than 30 days old backups from linking docker container and remove them as well in the backup script.
 
+### Monitoring
+
+The monitoring stack consists of Prometheus and Grafana. When setting up grafana, it already has preconfigured Prometheus datasource and template Dasbaord.
+
+Current exporters:
+- [node exporter](https://github.com/prometheus/node_exporter)
 
 ## Network
 
@@ -56,6 +64,7 @@ Network is defined in a single docker compose file.
 - [x] Add cronjob feature in the install script
 - [x] Nginx and DNS setup, include readme for network 
 - [ ] Backup script for Jellyfin
+- [ ] Backup script for Grafana 
 
 ## More apps
 
