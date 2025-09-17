@@ -37,6 +37,7 @@ There are several self-hosted applications in this homelab.
 - [Jellyfin](https://github.com/jellyfin/jellyfin)
 - [Prometheus](https://github.com/prometheus/prometheus)
 - [Grafana](https://github.com/grafana/grafana)
+- [Syncthing]()
 
 ### linkding
 
@@ -53,6 +54,10 @@ The monitoring stack consists of Prometheus and Grafana. When setting up grafana
 Current exporters:
 - [node exporter](https://github.com/prometheus/node_exporter)
 
+### Syncthing
+
+Syncthing syncs personal notes with the server. Setting up instructions are [here](https://docs.syncthing.net/intro/getting-started.html). Syncthing runs on all devices that are synced. To autostart Syncthing on Linux, follow [this](https://docs.syncthing.net/users/autostart.html#linux) guide. Syncthing needs to run as a **user service**.
+
 ## Network
 
 Network is defined in a single docker compose file.
@@ -63,8 +68,9 @@ Network is defined in a single docker compose file.
 - [x] Add installation script
 - [x] Add cronjob feature in the install script
 - [x] Nginx and DNS setup, include readme for network 
-- [ ] Backup script for Jellyfin
-- [ ] Backup script for Grafana 
+- [ ] Backup script for Jellyfin config files
+- [ ] Backup script for Grafana
+- [ ] Backup script for Syncthing config files and data
 
 ## More apps
 
