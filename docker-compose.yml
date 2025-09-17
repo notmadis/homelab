@@ -102,6 +102,27 @@ services:
         ipv4_address: 172.50.0.9
     restart: unless-stopped
 
+  syncthing:
+    image: lscr.io/linuxserver/syncthing:latest
+    container_name: syncthing
+    hostname: syncthing #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./syncthing/config:/config
+      - $HOME/notes:/var/syncthing
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
+    restart: unless-stopped
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.10
+
 networks:
   homelab-network:
     name: homelab-network 
