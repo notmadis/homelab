@@ -17,13 +17,15 @@ mkdir $HOME/data
 mkdir $HOME/data/movies
 mkdir $HOME/data/shows
 mkdir $HOME/data/youtube
+mkdir $HOME/data/music
 
 
 
 # Create backup folders
+
 echo "Creating backup folders"
-mkdir ~/backups
-mkdir ~/backups/linkding
+mkdir $HOME/backups
+mkdir $HOME/backups/linkding
 
 sudo apt update -y
 
@@ -37,7 +39,7 @@ SHELL=/bin/bash
 # Make scripts executable
 chmod +x ~/homelab/backup-scripts/linkding.sh
 
-# Define the cron job
+# Define the cron job for linkding
 CRON_JOB="0 0 * * 1 $HOME/homelab/backup-scripts/linkding.sh"
 
 # Add the cron job to the crontab
