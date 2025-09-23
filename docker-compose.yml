@@ -25,6 +25,8 @@ services:
       - $HOME/data/movies/:/data/movies
       - $HOME/data/shows/:/data/shows
       - $HOME/data/youtube:/data/youtube
+      - $HOME/data/music:/data/music
+
     ports:
       - 8096:8096
     restart: unless-stopped
