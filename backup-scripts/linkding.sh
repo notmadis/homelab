@@ -9,7 +9,7 @@ BACKUP_DIR=~/backups/linkding
 mkdir -p $BACKUP_DIR
 
 # create full backup file
-docker exec -it $CONTAINER python manage.py full_backup /etc/linkding/data/$BACKUP_FILE
+docker exec $CONTAINER python manage.py full_backup /etc/linkding/data/$BACKUP_FILE
 
 # copy the backup file to the backup directory
 docker cp $CONTAINER:/etc/linkding/data/$BACKUP_FILE $BACKUP_DIR/$BACKUP_FILE
@@ -18,4 +18,4 @@ docker cp $CONTAINER:/etc/linkding/data/$BACKUP_FILE $BACKUP_DIR/$BACKUP_FILE
 find $BACKUP_DIR/* -mtime +30 -exec rm {} \;
 
 # Delete files older than 30 days from container
-docker exec -it linkding find /etc/linkding/data/ -name "backup*" -mtime +30 -exec rm {} \;
+docker exec $CONTAINER find /etc/linkding/data/ -name "backup*" -mtime +30 -exec rm {} \;
