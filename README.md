@@ -21,6 +21,10 @@ This script will:
 - Install necessary programs for homelab
 
 Edit the `.env.example` file and change the filename to `.env`
+```shell
+mv .env.example .env
+```
+
 
 ## Running with docker
 ```shell
@@ -67,15 +71,16 @@ Network is defined in a single docker compose file.
 
 - [x] Add installation script
 - [x] Add cronjob feature in the install script
-- [x] Nginx and DNS setup, include readme for network 
+- [ ] Nginx and DNS setup, include readme for network 
+- [ ] Implement https
 - [ ] Backup script for Jellyfin config files
 - [ ] Backup script for Grafana
 - [ ] Backup script for Syncthing config files and data
+- [ ] Implement secrets management
 
 ## More apps
 
-- **mealie** - manage recipies
-- **Bar assistant**
+
 - [Archivebox](https://github.com/ArchiveBox/ArchiveBox/) - Archive webpages
 - [Wallabag](https://github.com/wallabag/wallabag) - Webpage manager
 
