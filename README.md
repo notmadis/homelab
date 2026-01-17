@@ -44,6 +44,7 @@ There are several self-hosted applications in this homelab.
 - [Syncthing]()
 - [PiHole](https://pi-hole.net/)
 - [Excalidraw](https://excalidraw.com/)
+- [Nginx Proxy manager](https://nginxproxymanager.com)
 
 ### linkding
 
@@ -65,11 +66,11 @@ Current exporters:
 Syncthing syncs personal notes with the server. Setting up instructions are [here](https://docs.syncthing.net/intro/getting-started.html). Syncthing runs on all devices that are synced. To autostart Syncthing on Linux, follow [this](https://docs.syncthing.net/users/autostart.html#linux) guide. Syncthing needs to run as a **user service**.
 
 
-### PiHole
+### Pi-hole
 
-PiHole is running in a container on port `8082`. Listening to DNS requests on port `53`.
+Pi-hole is running in a container on port `8082`. Listening to DNS requests on port `53`.
 
-#### Setting PiHole as a local DNS:
+#### Setting Pi-hole as a local DNS:
 
 Before running Pi-hole, the host system (Ubuntu) must release **Port 53** so the PiHole container can bind to it. By default, `systemd-resolved` listens on this port.
 
