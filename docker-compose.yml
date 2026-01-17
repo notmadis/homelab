@@ -64,6 +64,26 @@ services:
       - ./nginxproxy/data:/data
       - ./nginxproxy/letsencrypt:/etc/letsencrypt
 
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    hostname: pihole
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8082:80"  # Changed to 8082
+    environment:
+      - TZ=Europe/Helsinki
+      - DNS1=1.1.1.1
+      - DNS2=8.8.8.8
+    volumes:
+      - ./pihole/etc-pihole:/etc/pihole
+      - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.99
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -125,6 +145,16 @@ services:
     networks:
       homelab-network:
         ipv4_address: 172.50.0.10
+
+  excalidraw:
+    image: excalidraw/excalidraw:latest
+    container_name: excalidraw
+    restart: unless-stopped
+    ports:
+      - "3001:80"
+    networks:
+      homelab-network:
+        ipv4_address: 172.50.0.12
 
 networks:
   homelab-network:
