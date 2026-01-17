@@ -42,6 +42,8 @@ There are several self-hosted applications in this homelab.
 - [Prometheus](https://github.com/prometheus/prometheus)
 - [Grafana](https://github.com/grafana/grafana)
 - [Syncthing]()
+- [PiHole](https://pi-hole.net/)
+- [Excalidraw](https://excalidraw.com/)
 
 ### linkding
 
@@ -62,6 +64,51 @@ Current exporters:
 
 Syncthing syncs personal notes with the server. Setting up instructions are [here](https://docs.syncthing.net/intro/getting-started.html). Syncthing runs on all devices that are synced. To autostart Syncthing on Linux, follow [this](https://docs.syncthing.net/users/autostart.html#linux) guide. Syncthing needs to run as a **user service**.
 
+
+### PiHole
+
+PiHole is running in a container on port `8082`. Listening to DNS requests on port `53`.
+
+#### Setting PiHole as a local DNS:
+
+Before running Pi-hole, the host system (Ubuntu) must release **Port 53** so the PiHole container can bind to it. By default, `systemd-resolved` listens on this port.
+
+1. Disable the Default DNS listener
+Edit the systemd-resolved configuration:
+```shell
+sudo vim /etc/systemd/resolved.conf
+```
+
+Uncomment and change these lines
+```shell
+
+[Resolve]
+DNS=8.8.8.8 1.1.1.1
+...
+DNSStubListener=no
+```
+
+2. Fix the symlink
+```shell
+sudo rm /etc/resolv.conf
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+
+3. Apply changes
+
+```shell
+sudo systemctl restart systemd-resolved
+```
+4. Make sure nothing is running on port 53
+
+```shell
+sudo lsof -i :53
+```
+Password can be found in the container logs
+
+5. Set local DNS as homelab ip in router settings.
+6. Configure local DNS records n Pi-hole and also in Nginx Proxy manager
+
 ## Network
 
 Network is defined in a single docker compose file.
@@ -71,7 +118,7 @@ Network is defined in a single docker compose file.
 
 - [x] Add installation script
 - [x] Add cronjob feature in the install script
-- [ ] Nginx and DNS setup, include readme for network 
+- [x] Nginx and DNS setup, include readme for network 
 - [ ] Implement https
 - [ ] Backup script for Jellyfin config files
 - [ ] Backup script for Grafana
