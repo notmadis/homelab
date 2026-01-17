@@ -125,6 +125,8 @@ Network is defined in a single docker compose file.
 - [ ] Backup script for Grafana
 - [ ] Backup script for Syncthing config files and data
 - [ ] Implement secrets management
+- [ ] Add homepage
+- [ ] Add Pihole exporter
 
 ## More apps
 
