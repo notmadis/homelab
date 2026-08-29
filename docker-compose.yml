@@ -48,22 +48,6 @@ services:
       homelab-network:
         ipv4_address: 172.50.0.5
 
-  ngix-proxy:
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      # These ports are in format <host-port>:<container-port>
-      - '80:80' # Public HTTP Port
-      - '443:443' # Public HTTPS Port
-      - '81:81' # Admin Web Port
-    networks:
-      homelab-network:
-        ipv4_address: 172.50.0.6
-
-    volumes:
-      - ./nginxproxy/data:/data
-      - ./nginxproxy/letsencrypt:/etc/letsencrypt
-
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
