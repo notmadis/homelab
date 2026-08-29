@@ -41,9 +41,7 @@ There are several self-hosted applications in this homelab.
 - [Jellyfin](https://github.com/jellyfin/jellyfin)
 - [Prometheus](https://github.com/prometheus/prometheus)
 - [Grafana](https://github.com/grafana/grafana)
-- [Syncthing]()
 - [PiHole](https://pi-hole.net/)
-- [Excalidraw](https://excalidraw.com/)
 - [Nginx Proxy manager](https://nginxproxymanager.com)
 
 ### linkding
@@ -60,10 +58,6 @@ The monitoring stack consists of Prometheus and Grafana. When setting up grafana
 
 Current exporters:
 - [node exporter](https://github.com/prometheus/node_exporter)
-
-### Syncthing
-
-Syncthing syncs personal notes with the server. Setting up instructions are [here](https://docs.syncthing.net/intro/getting-started.html). Syncthing runs on all devices that are synced. To autostart Syncthing on Linux, follow [this](https://docs.syncthing.net/users/autostart.html#linux) guide. Syncthing needs to run as a **user service**.
 
 
 ### Pi-hole
@@ -123,14 +117,6 @@ Network is defined in a single docker compose file.
 - [ ] Implement https
 - [ ] Backup script for Jellyfin config files
 - [ ] Backup script for Grafana
-- [ ] Backup script for Syncthing config files and data
 - [ ] Implement secrets management
 - [ ] Add homepage
 - [ ] Add Pihole exporter
-
-## More apps
-
-
-- [Archivebox](https://github.com/ArchiveBox/ArchiveBox/) - Archive webpages
-- [Wallabag](https://github.com/wallabag/wallabag) - Webpage manager
-
