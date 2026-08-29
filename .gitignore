@@ -4,3 +4,5 @@ data
 pihole/
 jellyfin/
 linkding/data/
+monitoring/prometheus_data/
+monitoring/grafana/data/
