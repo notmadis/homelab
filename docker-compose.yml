@@ -103,7 +103,7 @@ services:
     restart: unless-stopped
 
   dynacat:
-    container_name: grafana
+    container_name: dynacat
     image: panonim/dynacat
     restart: unless-stopped
     volumes:
