@@ -39,9 +39,12 @@ SHELL=/bin/bash
 
 # Make scripts executable
 chmod +x ~/homelab/backup-scripts/linkding.sh
+chmod +x ~/homelab/backup-scripts/grafana.sh
 
-# Define the cron job for linkding
-CRON_JOB="0 0 * * 1 $HOME/homelab/backup-scripts/linkding.sh"
+# Define cron jobs
+CRON_JOB_LINKDING="0 0 * * 1 $HOME/homelab/backup-scripts/linkding.sh"
+CRON_JOB_GRAFANA="0 1 * * 1 $HOME/homelab/backup-scripts/grafana.sh"
 
-# Add the cron job to the crontab
-( crontab -l; echo "$CRON_JOB" ) | crontab -
+# Add the cron jobs to the crontab
+( crontab -l 2>/dev/null | grep -v "$HOME/homelab/backup-scripts/linkding.sh"; echo "$CRON_JOB_LINKDING" ) | crontab -
+( crontab -l 2>/dev/null | grep -v "$HOME/homelab/backup-scripts/grafana.sh"; echo "$CRON_JOB_GRAFANA" ) | crontab -
