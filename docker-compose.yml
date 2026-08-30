@@ -10,8 +10,7 @@ services:
       - .env
     restart: unless-stopped
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.3
+      - homelab-network
 
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
@@ -33,8 +32,7 @@ services:
     devices:
       - /dev/dri:/dev/dri
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.4
+      - homelab-network
 
   metube:
     image: ghcr.io/alexta69/metube
@@ -45,8 +43,7 @@ services:
     volumes:
       - $HOME/data/youtube:/downloads
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.5
+      - homelab-network
 
   pihole:
     container_name: pihole
@@ -79,8 +76,7 @@ services:
     ports:
       - "9091:9090"
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.7
+      - homelab-network
     restart: unless-stopped
 
   node-exporter:
@@ -89,8 +85,7 @@ services:
     ports:
       - "9100:9100"
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.8
+      - homelab-network
     restart: unless-stopped
 
   grafana:
@@ -105,8 +100,7 @@ services:
       - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
       - ./monitoring/grafana/data:/var/lib/grafana
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.9
+      - homelab-network
     restart: unless-stopped
 
 networks:
