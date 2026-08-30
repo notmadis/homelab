@@ -62,8 +62,7 @@ services:
       - ./pihole/etc-pihole:/etc/pihole
       - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
     networks:
-      homelab-network:
-        ipv4_address: 172.50.0.99
+      - homelab-network
 
   prometheus:
     image: prom/prometheus:latest
@@ -105,8 +104,4 @@ services:
 
 networks:
   homelab-network:
-    name: homelab-network 
-    ipam:
-      config:
-        - subnet: 172.50.0.0/24
-
+    name: homelab-network
