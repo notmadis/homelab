@@ -116,7 +116,7 @@ Network is defined in a single docker compose file.
 - [x] Nginx and DNS setup, include readme for network 
 - [ ] Implement https
 - [ ] Backup script for Jellyfin config files
-- [ ] Backup script for Grafana
+- [x] Backup script for Grafana
 - [ ] Implement secrets management
 - [ ] Add homepage
 - [ ] Add Pihole exporter
