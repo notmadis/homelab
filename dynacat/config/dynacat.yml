@@ -1,93 +1,71 @@
 pages:
   - name: Home
-    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
-    # hide-desktop-navigation: true
-    # hide-from-navigation: true
+    width: wide
     columns:
       - size: small
         widgets:
-          - type: calendar
-            first-day-of-week: monday
+          - type: bookmarks
+            groups:
+              - title: Productivity
+                color: 210 70 55 # blue
+                links:
+                  - title: YouTube
+                    url: https://www.youtube.com/
+                    icon: si:youtube
+                  - title: Gmail
+                    url: https://mail.google.com/
+                    icon: si:gmail
+                  - title: Outlook
+                    url: https://outlook.com/
+                    icon: mdi:outlook
+                  - title: Claude
+                    url: https://claude.ai/
+                    icon: si:claude
 
-          - type: rss
-            limit: 10
-            collapse-after: 3
-            cache: 12h
-            feeds:
-              - url: https://selfh.st/rss/
-                title: selfh.st
-                limit: 4
-              - url: https://ciechanow.ski/atom.xml
-              - url: https://www.joshwcomeau.com/rss.xml
-                title: Josh Comeau
-              - url: https://samwho.dev/rss.xml
-              - url: https://ishadeed.com/feed.xml
-                title: Ahmad Shadeed
-
-          - type: twitch-channels
-            channels:
-              - theprimeagen
-              - j_blow
-              - giantwaffle
-              - cohhcarnage
-              - christitustech
-              - EJ_SA
+              - title: Selfhosted
+                color: 160 55 50
+                links:
+                  - title: Linkding
+                    url: https://your-service.example.com/
+                  - title: Jellyfin
+                    url: https://your-service.example.com/
+                  - title: MeTube
+                    url: https://your-service.example.com/
+                  - title: Pi-hole
+                    url: https://your-service.example.com/
+                  - title: Grafana
+                    url: https://your-service.example.com/
+                  - title: Prometheus
+                    url: https://your-service.example.com/
 
       - size: full
         widgets:
-          - type: group
-            widgets:
-              - type: hacker-news
-              - type: lobsters
+          - type: search
+            search-engine: google
+            autofocus: false # set true if you want the search bar focused on load
 
-          - type: videos
-            channels:
-              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
-              - UCsBjURrPoezykLs9EqgamOA # Fireship
-              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
-
-          - type: group
+          - type: split-column
             widgets:
-              - type: reddit
-                subreddit: technology
-                show-thumbnails: true
+              # Left: r/selfhosted
               - type: reddit
                 subreddit: selfhosted
                 show-thumbnails: true
+                limit: 8
+              - type: bookmarks
+                title: X
+                groups:
+                  - links:
+                      - title: X
+                        url: https://x.com/
+                        icon: mdi:twitter
+
+          # Bottom: calendar
+          - type: calendar
+            first-day-of-week: monday
 
       - size: small
         widgets:
           - type: weather
-            location: London, United Kingdom
-            units: metric # alternatively "imperial"
-            hour-format: 24h # alternatively "24h"
-            # Optionally hide the location from being displayed in the widget
-            # hide-location: true
-
-          - type: markets
-            markets:
-              - symbol: SPY
-                name: S&P 500
-              - symbol: BTC-USD
-                name: Bitcoin
-              - symbol: NVDA
-                name: NVIDIA
-              - symbol: AAPL
-                name: Apple
-              - symbol: MSFT
-                name: Microsoft
-
-  # Add more pages here:
-  # - name: Your page name
-  #   columns:
-  #     - size: small
-  #       widgets:
-  #         # Add widgets here
-
-  #     - size: full
-  #       widgets:
-  #         # Add widgets here
-
-  #     - size: small
-  #       widgets:
-  #         # Add widgets here
+            location: Tallinn, Estonia
+            units: metric
+            hour-format: 24h
