@@ -26,6 +26,7 @@ mkdir $HOME/data/music
 echo "Creating backup folders"
 mkdir $HOME/backups
 mkdir $HOME/backups/linkding
+mkdir $HOME/backups/grafana
 
 sudo apt update -y
 
