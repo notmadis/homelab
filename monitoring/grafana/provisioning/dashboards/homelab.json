@@ -285,7 +285,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "node_memory_MemTotal_bytes{instance=\"172.50.0.8:9100\"} / 1073741824",
+          "expr": "node_memory_MemTotal_bytes{instance=\"node-exporter:9100\"} / 1073741824",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
