@@ -102,6 +102,16 @@ services:
       - homelab-network
     restart: unless-stopped
 
+  dynacat:
+    image: panonim/dynacat
+    restart: unless-stopped
+    volumes:
+     - ./dynacat/config:/app/config
+    ports:
+     - 8080:8080
+    networks:
+      - homelab-network
+
 networks:
   homelab-network:
     name: homelab-network
